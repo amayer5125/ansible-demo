@@ -1,4 +1,8 @@
+mysql01 ansible_host=10.0.0.51
 webserver01 ansible_host=10.0.0.50
+
+[dbservers]
+mysql01
 
 [webservers]
 webserver01

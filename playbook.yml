@@ -5,6 +5,11 @@
     - common
     - firewall
 
+- hosts: dbservers
+  become: yes
+  roles:
+    - geerlingguy.mysql
+
 - hosts: webservers
   become: yes
   roles:
