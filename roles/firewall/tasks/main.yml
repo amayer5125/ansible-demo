@@ -1,0 +1,11 @@
+---
+- name: Include Install Tasks
+  import_tasks: install.yml
+  tags:
+    - firewall
+
+- name: Include Configuration Tasks
+  import_tasks: config.yml
+  tags:
+    - firewall
+    - firewall-config

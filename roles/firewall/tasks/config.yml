@@ -1,0 +1,15 @@
+---
+- name: Allow SSH Through Firewall
+  ansible.posix.firewalld:
+    service: ssh
+    state: enabled
+    permanent: yes
+    immediate: yes
+
+- name: Allow Services Through Firewall
+  ansible.posix.firewalld:
+    service: "{{ item }}"
+    state: enabled
+    permanent: yes
+    immediate: yes
+  loop: "{{ firewall_services }}"

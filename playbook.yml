@@ -3,6 +3,7 @@
   become: yes
   roles:
     - common
+    - firewall
 
 - hosts: webservers
   become: yes

@@ -1,0 +1,11 @@
+---
+- name: Install Software
+  dnf:
+    name:
+      - firewalld
+
+- name: Start Firewall
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes
