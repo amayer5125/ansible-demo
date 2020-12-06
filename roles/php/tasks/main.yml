@@ -1,0 +1,15 @@
+---
+- name: Include Repository Tasks
+  import_tasks: repo.yml
+  tags:
+    - php
+
+- name: Include Install Tasks
+  import_tasks: install.yml
+  tags:
+    - php
+
+- name: Include Configuration Tasks
+  import_tasks: config.yml
+  tags:
+    - php

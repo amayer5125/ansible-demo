@@ -1,0 +1,13 @@
+---
+- name: Install epel-release Repository
+  dnf:
+    name:
+      - epel-release
+
+- name: Install Software
+  dnf:
+    name:
+      - htop
+      - tar
+      - tmux
+      - vim

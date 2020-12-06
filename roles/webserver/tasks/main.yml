@@ -1,0 +1,10 @@
+---
+- name: Include Directory Tasks
+  import_tasks: directories.yml
+  tags:
+    - webserver
+
+- name: Include SELinux Tasks
+  import_tasks: selinux.yml
+  tags:
+    - webserver

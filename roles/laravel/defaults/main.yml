@@ -1,0 +1,17 @@
+---
+laravel_directory: /srv/http
+
+laravel_app:
+  name: Laravel
+  env: local
+  key: ~
+  debug: no
+  url: http://localhost
+
+laravel_db:
+  connection: mysql
+  host: 127.0.0.1
+  port: 3306
+  database: laravel
+  username: root
+  password: ~

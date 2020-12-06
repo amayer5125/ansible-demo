@@ -1,0 +1,10 @@
+---
+- name: Include Install Tasks
+  import_tasks: install.yml
+  tags:
+    - common
+
+- name: Include SSHD Tasks
+  import_tasks: sshd.yml
+  tags:
+    - common

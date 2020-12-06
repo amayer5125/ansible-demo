@@ -1,0 +1,10 @@
+---
+- name: Add Remi's Repository
+  dnf:
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    disable_gpg_check: yes
+
+- name: Enable php:remi-7.4 Module
+  copy:
+    src: php.module
+    dest: /etc/dnf/modules.d/php.module

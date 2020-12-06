@@ -1,0 +1,3 @@
+---
+- name: restorecon
+  command: restorecon -irv /srv/http

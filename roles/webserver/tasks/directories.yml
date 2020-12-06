@@ -1,0 +1,13 @@
+---
+- name: Ensure group "webadmin" exists
+  group:
+    name: webadmin
+    state: present
+
+- name: Create Web Service Directory
+  file:
+    path: /srv/http
+    state: directory
+    owner: nginx
+    group: webadmin
+    mode: 02775

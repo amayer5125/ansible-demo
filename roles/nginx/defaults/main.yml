@@ -1,0 +1,3 @@
+---
+nginx_server_name: localhost
+nginx_webroot: /srv/http

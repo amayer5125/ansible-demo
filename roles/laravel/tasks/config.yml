@@ -1,0 +1,9 @@
+---
+- name: Template Configuration File
+  template:
+    src: env.j2
+    dest: "{{ laravel_directory }}/.env"
+    owner: nginx
+    group: webadmin
+    mode: 0660
+  notify: artisan cache config

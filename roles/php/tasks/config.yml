@@ -1,0 +1,18 @@
+---
+- name: Replace Apache With Nginx In php-fpm Config
+  lineinfile:
+    dest: /etc/php-fpm.d/www.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+    - regexp: ^user =
+      line: user = nginx
+    - regexp: ^group =
+      line: group = nginx
+  notify: restart php-fpm
+
+- name: Ensure Service Is Started And Enabled
+  systemd:
+    name: php-fpm
+    state: started
+    enabled: yes

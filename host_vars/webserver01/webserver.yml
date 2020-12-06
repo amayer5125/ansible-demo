@@ -1,0 +1,4 @@
+---
+webserver_writeable_files:
+  - /srv/http/storage(/.*)?
+  - /srv/http/bootstrap/cache(/.*)?

@@ -1,0 +1,11 @@
+---
+- name: Include User Tasks
+  import_tasks: user.yml
+  tags:
+    - amayer
+
+- name: Include Alacritty Tasks
+  import_tasks: alacritty.yml
+  tags:
+    - amayer
+    - amayer-alacritty

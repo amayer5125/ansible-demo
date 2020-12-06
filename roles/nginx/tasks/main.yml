@@ -1,0 +1,16 @@
+---
+- name: Include Repository Tasks
+  import_tasks: repo.yml
+  tags:
+    - nginx
+
+- name: Include Install Tasks
+  import_tasks: install.yml
+  tags:
+    - nginx
+
+- name: Include Configuration Tasks
+  import_tasks: config.yml
+  tags:
+    - nginx
+    - nginx-config

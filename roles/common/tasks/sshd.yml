@@ -1,0 +1,12 @@
+---
+- name: Disable Unneeded SSHD Features
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+    - regexp: ^PasswordAuthentication
+      line: PasswordAuthentication no
+    - regexp: ^PermitRootLogin
+      line: PermitRootLogin no
+  notify: reload sshd

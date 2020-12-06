@@ -1,0 +1,30 @@
+---
+- name: Ensure group "webadmin" exists
+  group:
+    name: webadmin
+    state: present
+
+- name: Add User amayer
+  user:
+    name: amayer
+    password: $6$YMM0AJ3ympT.7oM2$ISSUOyDDnX1UCYIzaabSp1JVEeh9tl46DP/UuDga1oGPJLCIZEsIwOGhLzw7YvY8S8838G/hhRr6wEuDdBTqs/
+    shell: /bin/bash
+    append: yes
+    groups:
+      - webadmin
+
+- name: Add amayer Authorized Keys
+  authorized_key:
+    user: amayer
+    state: present
+    key: "{{ item }}"
+  loop:
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN3ifwCkMnIiJTlb3WN4MOj4wMZxZipjQYQ2QtqjENZ2
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTw9bNS2xAsbDmqzRego6kOb8UAdFArx7sXK9poBd/w
+
+- name: Enable Sudo Without Password
+  copy:
+    content: "amayer ALL=(ALL) NOPASSWD: ALL\n"
+    dest: /etc/sudoers.d/amayer
+    mode: 0440
+    validate: visudo -cf %s

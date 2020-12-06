@@ -1,0 +1,6 @@
+---
+- name: artisan cache config
+  command: /usr/bin/php artisan config:cache
+  args:
+    chdir: "{{ laravel_directory }}"
+  ignore_errors: yes

@@ -1,0 +1,15 @@
+{{ ansible_managed | comment }}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name {{ nginx_server_name }};
+    root {{ nginx_webroot }};
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # load php configuration to pass php files to php-fpm
+    include /etc/nginx/default.d/php.conf;
+}

@@ -1,0 +1,5 @@
+---
+- name: Install Software
+  dnf:
+    name:
+      - nginx

@@ -1,0 +1,3 @@
+---
+nginx_server_name: 10.0.0.50
+nginx_webroot: /srv/http/public

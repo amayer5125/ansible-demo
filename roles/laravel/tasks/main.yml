@@ -1,0 +1,5 @@
+---
+- name: Include Config Tasks
+  import_tasks: config.yml
+  tags:
+    - laravel

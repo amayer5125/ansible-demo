@@ -1,0 +1,15 @@
+---
+- name: Template Website Nginx Config
+  template:
+    src: default.conf.j2
+    dest: "/etc/nginx/conf.d/{{ nginx_server_name }}.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: reload nginx
+
+- name: Ensure Nginx Service is Started and Enabled
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes

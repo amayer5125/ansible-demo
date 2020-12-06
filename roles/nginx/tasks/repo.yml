@@ -1,0 +1,5 @@
+---
+- name: Enable nginx:mainline Module
+  copy:
+    src: nginx.module
+    dest: /etc/dnf/modules.d/nginx.module

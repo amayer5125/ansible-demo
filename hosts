@@ -1,0 +1,4 @@
+webserver01 ansible_host=10.0.0.50
+
+[webservers]
+webserver01

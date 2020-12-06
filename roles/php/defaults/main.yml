@@ -1,0 +1,12 @@
+---
+php_packages:
+  - php-bcmath
+  - php-cli
+  - php-common
+  - php-fpm
+  - php-gd
+  - php-json
+  - php-mbstring
+  - php-mysqlnd
+  - php-pdo
+  - php-xml

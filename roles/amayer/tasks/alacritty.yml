@@ -1,0 +1,23 @@
+---
+- name: Check if Terminfo File Exists
+  stat:
+    path: /usr/share/terminfo/a/alacritty
+  register: terminfo
+
+- name: Download Temorary Terminfo File
+  get_url:
+    url: https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info
+    dest: /tmp/alacritty.info
+    mode: 600
+  when: not terminfo.stat.exists
+
+- name: Install Terminfo
+  command: /usr/bin/tic -x /tmp/alacritty.info
+  args:
+    creates: /usr/share/terminfo/a/alacritty
+  when: not terminfo.stat.exists
+
+- name: Delete Temporary Terminfo File
+  file:
+    state: absent
+    path: /tmp/alacritty.info
